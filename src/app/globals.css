@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF8F5; /* Cream white background */
+  --foreground: #2C3531; /* Charcoal slate body text */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --font-serif: var(--font-serif), serif;
+  --font-sans: var(--font-sans), sans-serif;
+  
+  --color-palma-cream: #FAF8F5;
+  --color-palma-charcoal: #2C3531;
+  --color-palma-teal: #00695C;
+  --color-palma-teal-medium: #00897B;
+  --color-palma-teal-light: #E0F2F1;
+  --color-palma-teal-dark: #004D40;
+  --color-palma-brown: #5D4037;
+  --color-palma-brown-light: #8D6E63;
+  --color-palma-gold: #D4AF37;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom premium design utilities */
+.glass-nav {
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 105, 92, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #004D40 0%, #00897B 50%, #5D4037 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-palma {
+  background: linear-gradient(135deg, #004D40 0%, #00695C 100%);
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0, 105, 92, 0.08);
+}
+
+.card-shadow-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-shadow-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -15px rgba(0, 105, 92, 0.15);
+}
+
+/* Wavy divider for elegant section breaks */
+.wavy-edge {
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+}
+
+/* For smooth scroll behaviors */
+html {
+  scroll-behavior: smooth;
 }
